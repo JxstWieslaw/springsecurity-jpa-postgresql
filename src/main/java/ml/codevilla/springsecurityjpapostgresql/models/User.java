@@ -3,7 +3,7 @@ package ml.codevilla.springsecurityjpapostgresql.models;
 import javax.persistence.*;
 
 @Entity
-@Table(name="User")
+@Table(name="users")
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
