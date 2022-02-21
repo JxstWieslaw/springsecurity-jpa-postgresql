@@ -13,14 +13,17 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 @EnableWebSecurity
 public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 
-    @Autowired
+    @Autowired//inject the UserDetailsService instance into AuthManBuilder auth.
     private UserDetailsService userDetailsService;
 
+    //1. Authentication
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-        auth.userDetailsService(userDetailsService);
+        auth.userDetailsService(userDetailsService); //create an instance of UserDetailsService
     }
 
+    //2. Authorization
+    //Difference between .hasRole and .hasAuthority
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests()

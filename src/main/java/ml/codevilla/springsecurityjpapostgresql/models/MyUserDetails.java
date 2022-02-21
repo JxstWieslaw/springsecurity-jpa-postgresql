@@ -3,13 +3,14 @@ package ml.codevilla.springsecurityjpapostgresql.models;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.stereotype.Service;
 
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.List;
-import java.util.Optional;
 import java.util.stream.Collectors;
 
+//UserDetails Object used for Authentication. Custom implementation
 public class MyUserDetails implements UserDetails {
 
     private String userName;
@@ -17,8 +18,8 @@ public class MyUserDetails implements UserDetails {
     private boolean active;
     private List<GrantedAuthority> authorities;
 
-
     public MyUserDetails() {
+
     }
 
     public MyUserDetails(User user) {

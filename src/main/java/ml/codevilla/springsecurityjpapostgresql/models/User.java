@@ -1,6 +1,8 @@
 package ml.codevilla.springsecurityjpapostgresql.models;
 
 import javax.persistence.*;
+//JPA user entity class. Class Backing a Certain Table
+
 
 @Entity
 @Table(name="users")
